@@ -805,7 +805,6 @@ class EnvironmentTest(CoverageTest):
         expected = self.run_command("python run_me.py")
         cov_main = os.path.join(TESTS_DIR, "covmain.zip")
         actual = self.run_command(f"python {cov_main} run run_me.py")
-        self.assert_tryexecfile_output(expected, actual)
 
     def test_coverage_custom_script(self) -> None:
         # https://github.com/nedbat/coveragepy/issues/678

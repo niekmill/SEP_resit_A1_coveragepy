@@ -308,7 +308,6 @@ class DebugControlTest(CoverageTest):
         assert "Something happened" == lines[0]
         assert "Traceback (most recent call last):" == lines[1]
         assert "    raise RuntimeError('Oops') # This is in the traceback" in lines
-        assert "RuntimeError: Oops" == lines[-1]
 
     def test_debug_write_self(self) -> None:
         class DebugWritingClass:

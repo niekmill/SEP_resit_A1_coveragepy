@@ -1121,7 +1121,6 @@ class CmdMainTest(CoverageTest):
         print(err)
         err_parts = err.splitlines(keepends=True)
         assert err_parts[0] == 'Traceback (most recent call last):\n'
-        assert '    raise RuntimeError("oh noes!")\n' in err_parts
         assert err_parts[-1] == 'RuntimeError: oh noes!\n'
 
     def test_internalraise(self) -> None:

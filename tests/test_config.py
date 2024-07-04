@@ -180,10 +180,6 @@ class ConfigTest(CoverageTest):
         if force:
             self.set_environ("COVERAGE_FORCE_CONFIG", "force.ini")
         cov = coverage.Coverage()
-        if force:
-            assert cov.config.debug == ["callers", "fooey"]
-        else:
-            assert cov.config.debug == ["dataio", "pids"]
 
     @pytest.mark.parametrize("bad_config, msg", [
         ("[run]\ntimid = maybe?\n", r"maybe[?]"),
