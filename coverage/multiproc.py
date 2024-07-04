@@ -72,6 +72,24 @@ class Stowaway:
     def __setstate__(self, state: dict[str, str]) -> None:
         patch_multiprocessing(state["rcfile"])
 
+branch_coverage = {
+    "branch_if": False, 
+    "branch_else": False 
+}
+
+def print_coverage():
+    total_branches = len(branch_coverage)
+    hit_branches = sum(1 for hit in branch_coverage.values() if hit)
+    coverage_percentage = (hit_branches / total_branches) * 100 if total_branches > 0 else 0
+    print("\n" + "=" * 40)
+    print("multiproc.py branch coverage:")
+    print("=" * 40 + "\n")
+    print(f"Branch Coverage: {coverage_percentage:.2f}%\n")
+    for branch, hit in branch_coverage.items():
+        status = 'Hit' if hit else 'Not Hit'
+        print(f"{branch}: {status}")
+
+    print("\n" + "=" * 40 + "\n")
 
 def patch_multiprocessing(rcfile: str) -> None:
     """Monkey-patch the multiprocessing module.
@@ -84,8 +102,11 @@ def patch_multiprocessing(rcfile: str) -> None:
     """
 
     if hasattr(multiprocessing, PATCHED_MARKER):
+        branch_coverage["branch_if"] = True
         return
-
+    else:
+        branch_coverage["branch_else"] = True
+    
     OriginalProcess._bootstrap = ProcessWithCoverage._bootstrap     # type: ignore[attr-defined]
 
     # Set the value in ProcessWithCoverage that will be pickled into the child
@@ -113,3 +134,5 @@ def patch_multiprocessing(rcfile: str) -> None:
         spawn.get_preparation_data = get_preparation_data_with_stowaway
 
     setattr(multiprocessing, PATCHED_MARKER, True)
+
+print_coverage()
