@@ -118,7 +118,7 @@ def patch_multiprocessing(rcfile: str) -> None:
     # objects into the data that gets pickled and sent to the sub-process. When
     # the Stowaway is unpickled, its __setstate__ method is called, which
     # re-applies the monkey-patch.
-    # Windows only spawns, so this is needed to keep Windows working.
+    # Windows only spawns, so this is needed to keep Windows working..
     try:
         from multiprocessing import spawn
         original_get_preparation_data = spawn.get_preparation_data
