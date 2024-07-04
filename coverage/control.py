@@ -76,6 +76,26 @@ def override_config(cov: Coverage, **kwargs: TConfigValueIn) -> Iterator[None]:
 DEFAULT_DATAFILE = DefaultValue("MISSING")
 _DEFAULT_DATAFILE = DEFAULT_DATAFILE  # Just in case, for backwards compatibility
 
+branch_coverage = {
+    "branch_if_current": False, 
+    "branch_else_current": False 
+}
+
+def print_coverage():
+    total_branches = len(branch_coverage)
+    hit_branches = sum(1 for hit in branch_coverage.values() if hit)
+    coverage_percentage = (hit_branches / total_branches) * 100 if total_branches > 0 else 0
+    print("\n" + "=" * 40)
+    print("control.py branch coverage:")
+    print("=" * 40 + "\n")
+    print(f"Branch Coverage: {coverage_percentage:.2f}%\n")
+    for branch, hit in branch_coverage.items():
+        status = 'Hit' if hit else 'Not Hit'
+        print(f"{branch}: {status}")
+
+    print("\n" + "=" * 40 + "\n")
+
+
 class Coverage(TConfigurable):
     """Programmatic access to coverage.py.
 
@@ -107,6 +127,8 @@ class Coverage(TConfigurable):
     # The stack of started Coverage instances.
     _instances: list[Coverage] = []
 
+
+
     @classmethod
     def current(cls) -> Coverage | None:
         """Get the latest started `Coverage` instance, if any.
@@ -117,8 +139,10 @@ class Coverage(TConfigurable):
 
         """
         if cls._instances:
+            branch_coverage["branch_if_current"] = True
             return cls._instances[-1]
         else:
+            branch_coverage["branch_else_current"] = True
             return None
 
     def __init__(                       # pylint: disable=too-many-arguments
@@ -1396,3 +1420,5 @@ def _prevent_sub_process_measurement() -> None:
     auto_created_coverage = getattr(process_startup, "coverage", None)
     if auto_created_coverage is not None:
         auto_created_coverage._auto_save = False
+
+print_coverage()
