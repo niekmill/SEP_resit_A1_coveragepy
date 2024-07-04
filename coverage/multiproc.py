@@ -135,4 +135,4 @@ def patch_multiprocessing(rcfile: str) -> None:
 
     setattr(multiprocessing, PATCHED_MARKER, True)
 
-print_coverage()
+# print_coverage()

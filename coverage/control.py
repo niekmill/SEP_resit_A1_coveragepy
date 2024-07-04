@@ -1421,4 +1421,4 @@ def _prevent_sub_process_measurement() -> None:
     if auto_created_coverage is not None:
         auto_created_coverage._auto_save = False
 
-print_coverage()
+# print_coverage()
