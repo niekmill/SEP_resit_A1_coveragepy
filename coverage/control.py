@@ -76,20 +76,20 @@ def override_config(cov: Coverage, **kwargs: TConfigValueIn) -> Iterator[None]:
 DEFAULT_DATAFILE = DefaultValue("MISSING")
 _DEFAULT_DATAFILE = DEFAULT_DATAFILE  # Just in case, for backwards compatibility
 
-branch_coverage = {
+branch_coverage_current = {
     "branch_if_current": False, 
     "branch_else_current": False 
 }
 
 def print_coverage():
-    total_branches = len(branch_coverage)
-    hit_branches = sum(1 for hit in branch_coverage.values() if hit)
+    total_branches = len(branch_coverage_current)
+    hit_branches = sum(1 for hit in branch_coverage_current.values() if hit)
     coverage_percentage = (hit_branches / total_branches) * 100 if total_branches > 0 else 0
     print("\n" + "=" * 40)
     print("control.py branch coverage:")
     print("=" * 40 + "\n")
     print(f"Branch Coverage: {coverage_percentage:.2f}%\n")
-    for branch, hit in branch_coverage.items():
+    for branch, hit in branch_coverage_current.items():
         status = 'Hit' if hit else 'Not Hit'
         print(f"{branch}: {status}")
 
@@ -139,10 +139,10 @@ class Coverage(TConfigurable):
 
         """
         if cls._instances:
-            branch_coverage["branch_if_current"] = True
+            branch_coverage_current["branch_if_current"] = True
             return cls._instances[-1]
         else:
-            branch_coverage["branch_else_current"] = True
+            branch_coverage_current["branch_else_current"] = True
             return None
 
     def __init__(                       # pylint: disable=too-many-arguments
