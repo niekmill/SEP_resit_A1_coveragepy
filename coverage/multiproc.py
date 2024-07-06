@@ -72,24 +72,25 @@ class Stowaway:
     def __setstate__(self, state: dict[str, str]) -> None:
         patch_multiprocessing(state["rcfile"])
 
-branch_coverage = {
-    "branch_if": False, 
-    "branch_else": False 
-}
-
 def print_coverage():
-    total_branches = len(branch_coverage)
-    hit_branches = sum(1 for hit in branch_coverage.values() if hit)
+    total_branches = len(branch_coverage_multiproc)
+    hit_branches = sum(1 for hit in branch_coverage_multiproc.values() if hit)
     coverage_percentage = (hit_branches / total_branches) * 100 if total_branches > 0 else 0
     print("\n" + "=" * 40)
     print("multiproc.py branch coverage:")
     print("=" * 40 + "\n")
     print(f"Branch Coverage: {coverage_percentage:.2f}%\n")
-    for branch, hit in branch_coverage.items():
+    for branch, hit in branch_coverage_multiproc.items():
         status = 'Hit' if hit else 'Not Hit'
         print(f"{branch}: {status}")
 
     print("\n" + "=" * 40 + "\n")
+
+
+branch_coverage_multiproc = {
+    "branch_if": False, 
+    "branch_else": False 
+}
 
 def patch_multiprocessing(rcfile: str) -> None:
     """Monkey-patch the multiprocessing module.
@@ -100,12 +101,14 @@ def patch_multiprocessing(rcfile: str) -> None:
     `rcfile` is the path to the rcfile being used.
 
     """
-
+    # print_coverage()
     if hasattr(multiprocessing, PATCHED_MARKER):
-        branch_coverage["branch_if"] = True
+        # print("ENTERS IF")
+        branch_coverage_multiproc["branch_if"] = True
         return
     else:
-        branch_coverage["branch_else"] = True
+        # print("ENTERS ELSE")
+        branch_coverage_multiproc["branch_else"] = True
     
     OriginalProcess._bootstrap = ProcessWithCoverage._bootstrap     # type: ignore[attr-defined]
 
@@ -135,4 +138,38 @@ def patch_multiprocessing(rcfile: str) -> None:
 
     setattr(multiprocessing, PATCHED_MARKER, True)
 
-# print_coverage()
+import unittest
+import multiprocessing
+
+# class TestPatchMultiprocessing(unittest.TestCase):
+#     @classmethod
+#     def setUpClass(cls):
+#         global branch_coverage_multiproc
+#         branch_coverage_multiproc = {
+#             "branch_if": False, 
+#             "branch_else": False 
+#         }
+    
+#     def setUp(self):
+#         if hasattr(multiprocessing, PATCHED_MARKER):
+#             delattr(multiprocessing, PATCHED_MARKER)
+#         self.rcfile = "dummy_path"
+
+#     def test_patch_multiprocessing_not_patched(self):
+#         self.assertFalse(hasattr(multiprocessing, PATCHED_MARKER))
+#         patch_multiprocessing(self.rcfile)
+#         self.assertTrue(branch_coverage_multiproc["branch_else"])
+#         self.assertTrue(hasattr(multiprocessing, PATCHED_MARKER))
+
+#     def test_patch_multiprocessing_already_patched(self):
+#         setattr(multiprocessing, PATCHED_MARKER, True)
+#         self.assertTrue(hasattr(multiprocessing, PATCHED_MARKER))
+#         patch_multiprocessing(self.rcfile)
+#         self.assertTrue(branch_coverage_multiproc["branch_if"])
+
+#     @classmethod
+#     def tearDownClass(cls):
+#         print_coverage()
+
+# if __name__ is '__main__':
+#     unittest.main()

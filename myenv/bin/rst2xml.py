@@ -1,4 +1,4 @@
-#!/Users/niekbremer/SEP_resit_a1_coveragepy/myenv/bin/python3.12
+#!/Users/niekbremer/SEP_resit_a1_coveragepycopy2/myenv/bin/python3.12
 
 # $Id: rst2xml.py 9115 2022-07-28 17:06:24Z milde $
 # Author: David Goodger <goodger@python.org>

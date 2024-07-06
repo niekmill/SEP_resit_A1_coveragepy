@@ -1,4 +1,4 @@
-#!/Users/niekbremer/SEP_resit_a1_coveragepy/myenv/bin/python3.12
+#!/Users/niekbremer/SEP_resit_a1_coveragepycopy2/myenv/bin/python3.12
 # :Copyright: © 2015 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:
 #
