@@ -32,8 +32,8 @@ Function 1: patch_multiprocessing
 ---------------------------------
 
 - **Patch or Commit Link:** 
-    Instrumentation commit: `1d78fd554ae6ee0c42273c9e5d0fba5d88dd70e7`_
-    Test creation commit: `49a3c9b1b7844a8bcffed5fcf8202833976d442b`_
+    Instrumentation commit: `https://github.com/niekmill/SEP_resit_A1_coveragepy/commit/1d78fd554ae6ee0c42273c9e5d0fba5d88dd70e7`_  
+    Test creation commit: `https://github.com/niekmill/SEP_resit_A1_coveragepy/commit/49a3c9b1b7844a8bcffed5fcf8202833976d442b`_
 
 - **Old Coverage Results:** 
 
@@ -54,8 +54,8 @@ Function 2: current
 --------------------
 
 - **Patch or Commit Link:** 
-    Instrumentation commit: `66104fb0c920de9b044fcbed525c0efa6da1c08c`_
-    Test creation commit: `5a68a2143c837d61b23139c86f10df6cd119f101`_
+    Instrumentation commit: `https://github.com/niekmill/SEP_resit_A1_coveragepy/commit/66104fb0c920de9b044fcbed525c0efa6da1c08c`_  
+    Test creation commit: `https://github.com/niekmill/SEP_resit_A1_coveragepy/commit/5a68a2143c837d61b23139c86f10df6cd119f101`_
 
 - **Old Coverage Results:** 
 
@@ -86,4 +86,3 @@ Overall
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/coverageresultNEW.png
      :width: 600
      :align: center
-
