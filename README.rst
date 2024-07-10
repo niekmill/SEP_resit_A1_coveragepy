@@ -17,7 +17,7 @@ Coverage Measurement with Existing Tool
 - **Coverage Results:**
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/coverageresultOG.png
-     :width: 600
+     :width: 900
      :align: center
 
   *Add a brief description of the coverage results if needed.*
