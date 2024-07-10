@@ -16,8 +16,6 @@ Report for Assignment 1 Resit
 
   ![Coverage Results](https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/coverageresultOG.png)
 
-## Coverage Improvement
-
 ### Individual Tests
 
 #### Function 1: `patch_multiprocessing`
