@@ -43,7 +43,7 @@ Function 1: patch_multiprocessing
 - **New Coverage Results:** 
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/newmultiprocresult.png
-     :width: 400
+     :width: 600
      :align: center
 
 - **Coverage Improvement:** 100%
