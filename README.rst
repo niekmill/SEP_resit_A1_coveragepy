@@ -13,7 +13,7 @@ Coverage Measurement with Existing Tool
 ----------------------------------------
 
 - **Tool Used:** Coverage.py
-- **Execution Method:** `<How the tool was executed>`
+- **Execution Method:** The existing tool was used through my mac terminal after fixing many failures and errors. I ran it with coverage run -m pytest and then coverage report to see the results.
 - **Coverage Results:**
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/coverageresultOG.png
