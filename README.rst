@@ -20,7 +20,6 @@ Coverage Measurement with Existing Tool
      :width: 900
      :align: center
 
-  *Add a brief description of the coverage results if needed.*
 
 Coverage Improvement
 ---------------------
