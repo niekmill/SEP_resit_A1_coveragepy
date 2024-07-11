@@ -17,7 +17,7 @@ Coverage Measurement with Existing Tool
 - **Coverage Results:**
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/coverageresultOG.png
-     :width: 900
+     :width: 1200
      :align: center
 
 
@@ -34,13 +34,13 @@ Function 1: patch_multiprocessing
 - **Old Coverage Results:** 
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/oldpatchmultiprocessing.png
-     :width: 400
+     :width: 1200
      :align: center
 
 - **New Coverage Results:** 
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/improvedcovresult.png
-     :width: 600
+     :width: 1200
      :align: center
 
 - **Coverage Improvement:** 100%
@@ -55,13 +55,13 @@ Function 2: current
 - **Old Coverage Results:** 
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/oldcurrent.png
-     :width: 400
+     :width: 1200
      :align: center
 
 - **New Coverage Results:** 
 
   .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/improvedcovresult2.png
-     :width: 400
+     :width: 1200
      :align: center
 
 - **Coverage Improvement:** 100%
