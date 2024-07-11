@@ -43,7 +43,7 @@ Function 1: patch_multiprocessing
      :width: 1200
      :align: center
 
-- **Coverage Improvement:** 100%
+- **Coverage Improvement:** 29.5%
 - **Elaboration:** Added test cases to cover all cases of input, resulting in better branch coverage
 
 Function 2: current
@@ -64,7 +64,7 @@ Function 2: current
      :width: 1200
      :align: center
 
-- **Coverage Improvement:** 100%
+- **Coverage Improvement:** 40%
 - **Elaboration:** Added test cases to cover all cases of input, resulting in better branch coverage
 
 Overall
