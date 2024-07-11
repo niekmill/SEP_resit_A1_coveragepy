@@ -33,13 +33,13 @@ Function 1: patch_multiprocessing
 
 - **Old Coverage Results:** 
 
-  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/multiproccovresult.png
+  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/oldpatchmultiprocessing.png
      :width: 400
      :align: center
 
 - **New Coverage Results:** 
 
-  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/newmultiprocresult.png
+  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/improvedcovresult.png
      :width: 600
      :align: center
 
@@ -54,13 +54,13 @@ Function 2: current
 
 - **Old Coverage Results:** 
 
-  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/currentcovresult.png
+  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/oldcurrent.png
      :width: 400
      :align: center
 
 - **New Coverage Results:** 
 
-  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/newcurrentresult.png
+  .. image:: https://github.com/niekmill/SEP_resit_A1_coveragepy/raw/main/images/improvedcovresult2.png
      :width: 400
      :align: center
 
